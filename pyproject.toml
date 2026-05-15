@@ -1,0 +1,13 @@
+[project]
+name = "cloud-cost-guardrails"
+version = "0.1.0"
+description = "Provider-neutral cloud cost and security guardrail analyzer."
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+cloud-guardrails = "cloud_guardrails.cli:main"
+
+[tool.setuptools]
+packages = ["cloud_guardrails"]
+

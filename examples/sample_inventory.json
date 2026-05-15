@@ -1,0 +1,55 @@
+[
+  {
+    "id": "i-prod-001",
+    "provider": "aws",
+    "type": "compute",
+    "state": "running",
+    "monthly_cost": 420.0,
+    "public": false,
+    "open_ports": [443],
+    "tags": {
+      "owner": "platform",
+      "environment": "prod"
+    },
+    "age_days": 90
+  },
+  {
+    "id": "st-dev-public-001",
+    "provider": "azure",
+    "type": "storage",
+    "state": "active",
+    "monthly_cost": 37.5,
+    "public": true,
+    "open_ports": [],
+    "tags": {
+      "environment": "dev"
+    },
+    "age_days": 22
+  },
+  {
+    "id": "vm-lab-3389",
+    "provider": "azure",
+    "type": "compute",
+    "state": "running",
+    "monthly_cost": 115.0,
+    "public": true,
+    "open_ports": [80, 3389],
+    "tags": {
+      "owner": "lab",
+      "environment": "test"
+    },
+    "age_days": 7
+  },
+  {
+    "id": "disk-old-014",
+    "provider": "gcp",
+    "type": "disk",
+    "state": "unattached",
+    "monthly_cost": 19.75,
+    "public": false,
+    "open_ports": [],
+    "tags": {},
+    "age_days": 45
+  }
+]
+
