@@ -1,0 +1,1 @@
+[{"id":"fictional-private-bucket","provider":"aws","type":"storage","public":"false","tags":{"owner":"demo","environment":"test"}}]

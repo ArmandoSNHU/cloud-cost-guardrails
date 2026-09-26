@@ -1,0 +1,64 @@
+{
+  "repository": "cloud-cost-guardrails",
+  "title": "Strict inventory contracts",
+  "change": "String false and invalid numeric fields are rejected instead of producing misleading findings.",
+  "generated_at": "2026-09-26T16:10:57.361622+00:00",
+  "source": "Contribution working tree; synthetic inputs only",
+  "test_command": "python -m unittest discover",
+  "tests": 11,
+  "test_output": "...........\n----------------------------------------------------------------------\nRan 11 tests in 0.024s\n\nOK",
+  "example_command": "python -m cloud_guardrails examples/sample_inventory.json --pretty",
+  "example": {
+    "finding_count": 6,
+    "findings": [
+      {
+        "resource_id": "i-prod-001",
+        "provider": "aws",
+        "severity": "high",
+        "rule": "oversized_compute",
+        "message": "Compute resource is above the approved monthly cost threshold.",
+        "estimated_monthly_waste": 120.0
+      },
+      {
+        "resource_id": "st-dev-public-001",
+        "provider": "azure",
+        "severity": "medium",
+        "rule": "missing_required_tags",
+        "message": "Resource is missing required tag(s): owner.",
+        "estimated_monthly_waste": 0.0
+      },
+      {
+        "resource_id": "st-dev-public-001",
+        "provider": "azure",
+        "severity": "critical",
+        "rule": "public_storage",
+        "message": "Storage resource is publicly accessible.",
+        "estimated_monthly_waste": 0.0
+      },
+      {
+        "resource_id": "vm-lab-3389",
+        "provider": "azure",
+        "severity": "critical",
+        "rule": "public_admin_port",
+        "message": "Public resource exposes administrative port(s): [3389].",
+        "estimated_monthly_waste": 0.0
+      },
+      {
+        "resource_id": "disk-old-014",
+        "provider": "gcp",
+        "severity": "medium",
+        "rule": "missing_required_tags",
+        "message": "Resource is missing required tag(s): environment, owner.",
+        "estimated_monthly_waste": 0.0
+      },
+      {
+        "resource_id": "disk-old-014",
+        "provider": "gcp",
+        "severity": "medium",
+        "rule": "unattached_disk",
+        "message": "Disk is unattached and may be direct storage waste.",
+        "estimated_monthly_waste": 19.75
+      }
+    ]
+  }
+}
